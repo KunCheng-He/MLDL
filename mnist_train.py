@@ -1,5 +1,6 @@
 # 导入需要的包
 import torch
+import torch.utils.data as data
 from torch import nn, optim
 import torch.nn.functional as F
 import torchvision
@@ -22,7 +23,7 @@ class Net(nn.Module):
 
 # 加载数据集
 def load_data(batch_size):
-    train_loader = torch.utils.data.DataLoader(
+    train_loader = data.DataLoader(
         torchvision.datasets.MNIST(
             "msist_data", train=True, download=True,
             transform=torchvision.transforms.Compose([
@@ -31,7 +32,7 @@ def load_data(batch_size):
         ),
         batch_size=batch_size, shuffle=True
     )
-    test_loader = torch.utils.data.DataLoader(
+    test_loader = data.DataLoader(
         torchvision.datasets.MNIST(
             "msist_data", train=False, download=True,
             transform=torchvision.transforms.Compose([
