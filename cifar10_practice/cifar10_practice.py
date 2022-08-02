@@ -48,14 +48,15 @@ def train(net, train_loader, test_loader, epochs, lr, device):
         
         # 计算该 epoch 训练完后目前模型的正确率
         net.eval()
-        all_item = 0.0
-        acc_item = 0.0
-        for x, y in test_loader:
-            all_item += y.shape[0]
-            x, y = x.to(device), y.to(device)
-            y_hat = net(x)
-            y_hat = y_hat.argmax(dim=1)
-            acc_item += torch.eq(y, y_hat).sum().item()
+        with torch.no_grad():
+            all_item = 0.0
+            acc_item = 0.0
+            for x, y in test_loader:
+                all_item += y.shape[0]
+                x, y = x.to(device), y.to(device)
+                y_hat = net(x)
+                y_hat = y_hat.argmax(dim=1)
+                acc_item += torch.eq(y, y_hat).sum().item()
         
         print("epoch {} loss: {:.5f} acc: {:.5f}".format(epoch+1, ls, acc_item / all_item))
 
