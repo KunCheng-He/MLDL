@@ -11,7 +11,7 @@ input_size = 1
 hidden_size = 16
 output_size = 1
 batch_size = 1
-epochs = 3000
+epochs = 6000
 lr = 0.01
 
 
@@ -97,13 +97,20 @@ net.eval()
 with torch.no_grad():
     # 用前一个真实值去预测后一个值，结果很好了
     out, hidden_prev = net(x, hidden_prev)
-    out = out.reshape(out.shape[1])
+    out = out.reshape(out.shape[1]).numpy()
+
+    # 只有第一个值为真实值，之后根据自己的预测值进行连续预测
+    # out = []
+    # x = torch.tensor([data[0][0]]).float().reshape(1, 1, 1)
+    # for i in range(49):
+    #     x, hidden_prev = net(x, hidden_prev)
+    #     out.append(x.item())
 
     # 可视化结果
     plt.figure(figsize=(20, 8), dpi=80)
     x = range(num_time_steps)
     plt.plot(x, data.reshape(num_time_steps), color="m", linestyle="-.", label="True curve")
-    plt.plot(x[1:], out.numpy(), label="Prediction curve")
+    plt.plot(x[1:], out, label="Prediction curve")
     plt.legend(loc="upper right")
     plt.grid(True, linestyle="--", alpha=0.5)
     plt.show()
