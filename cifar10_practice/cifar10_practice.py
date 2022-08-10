@@ -10,7 +10,7 @@ from lenet5 import Lenet5
 def load_dataset(batch_size):
     train_loader = DataLoader(
         datasets.CIFAR10(
-            "../CIFAR10", train=True, transform=transforms.Compose([
+            "CIFAR10", train=True, transform=transforms.Compose([
                 transforms.Resize((32, 32)),
                 transforms.ToTensor()
             ]), download=True
@@ -18,7 +18,7 @@ def load_dataset(batch_size):
     )
     test_loader = DataLoader(
         datasets.CIFAR10(
-            "../CIFAR10", train=False, transform=transforms.Compose([
+            "CIFAR10", train=False, transform=transforms.Compose([
                 transforms.Resize((32, 32)),
                 transforms.ToTensor()
             ]), download=True
