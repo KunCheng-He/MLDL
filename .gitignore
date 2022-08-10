@@ -157,6 +157,6 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
-/msist_data/
-/CIFAR10/
+/elementary_practice/msist_data/
+/cifar10_practice/CIFAR10/
 /Sentiment_classification/emo_data/glove.6B.50d.txt
