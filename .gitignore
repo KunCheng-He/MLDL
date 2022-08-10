@@ -159,3 +159,4 @@ cython_debug/
 #.idea/
 /msist_data/
 /CIFAR10/
+/Sentiment_classification/emo_data/glove.6B.50d.txt
