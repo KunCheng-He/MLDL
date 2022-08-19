@@ -8,3 +8,5 @@
 ## 数据集下载问题
 
 glove.6B.50d.txt 下载地址：https://www.kaggle.com/datasets/watts2/glove6b50dtxt?resource=download
+
+libriphone 下载地址：https://github.com/xraychen/shiny-robot/releases/download/v1.0/libriphone.zip
