@@ -114,6 +114,7 @@ scheduler = optim.lr_scheduler.StepLR(optimizer, 1.0, gamma=0.95)  # 定义学�
 
 # 训练代码
 def train(epoch):
+    print("start training in ", device)
     model.train()
     total_loss = 0.0
     temp_loss = 0.0
