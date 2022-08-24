@@ -6,17 +6,12 @@ Vocab: 33278  OoV(正常英文词汇不在该数据集中的比例): 2.6%
 """
 
 
-# 导入数学工具包
-import math
-
 # 导入时间工具包
 import time
-from tracemalloc import start
 
 # 导入torch相关的包
 import torch
 from torch import nn, optim
-import torch.nn.functional as F
 
 # 导入文本处理的工具包
 import torchtext
