@@ -161,3 +161,4 @@ cython_debug/
 /cifar10_practice/CIFAR10/
 /Sentiment_classification/emo_data/glove.6B.50d.txt
 /Phoneme_Classification_李宏毅老师作业2/libriphone
+/WikiText-2-Transformer/wikitext-2
