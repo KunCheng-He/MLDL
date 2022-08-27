@@ -3,6 +3,7 @@
 这个数据集 600 篇训练文章，60篇验证文章，60篇测试文章
 train tokens: 2086708  valid tokens: 218177  test tokens: 246212
 Vocab: 33278  OoV(正常英文词汇不在该数据集中的比例): 2.6%
+线上执行过程（好像仅我可见）：https://openbayes.com/console/byack/containers/BmoRQy8oxam/overview
 """
 
 
